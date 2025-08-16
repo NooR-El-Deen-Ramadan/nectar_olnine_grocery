@@ -1,0 +1,21 @@
+ class AppImages {
+  //SVGs
+  static const String appTitleSvg = "assets/images/app_title.svg";
+  static const String appLogoSvg = "assets/images/app_logo.svg";
+  static const String locationIconSvg = "assets/images/location_icon.svg";
+  //PNGs
+  static const String eggPNG="assets/images/eggs.png";
+  static const String applePNG="assets/images/apple.png";
+  static const String bananaPNG="assets/images/banana.png";
+  static const String redPeperPNG="assets/images/red_peper.png";
+  static const String pepsiPNG="assets/images/pepsi.png";
+  static const String spritePNG="assets/images/sprite.png";
+  static const String cokePNG="assets/images/coke.png";
+  static const String cocaColaPNG="assets/images/coca.png";
+  static const String vegtablesPNG="assets/images/vegetables.png";
+  static const String oilsPNG="assets/images/oils.png";
+  static const String meatPNG="assets/images/meat.png";
+  static const String drinksPNG="assets/images/drinks.png";
+  static const String bakeryPNG="assets/images/bakery.png";
+  static const String diariesPNG="assets/images/diaries.png";
+}
