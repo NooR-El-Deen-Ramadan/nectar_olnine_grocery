@@ -6,6 +6,7 @@ class GategoryModel {
   final String image;
   final String name;
   final Color cardColor;
+  final double cardObesety=0.3;
 
 
   GategoryModel({
@@ -17,11 +18,11 @@ class GategoryModel {
 }
 
 final List<GategoryModel> categories = [
-  GategoryModel(name: "Fresh Freuits and Vegtables", image: AppImages.vegtablesPNG, cardColor: AppColors.vegtablesCardColor),
-  GategoryModel(name: "Diaries and Eggs", image: AppImages.diariesPNG, cardColor: AppColors.diaryCardColor),
-  GategoryModel(name: "Bakeries and Snacks", image: AppImages.bakeryPNG, cardColor: AppColors.backeryCardColor),
-  GategoryModel(name: "Meat and Fish", image: AppImages.meatPNG, cardColor: AppColors.meatCardColor),
-  GategoryModel(name: "Cooking Oils and Ghee", image: AppImages.oilsPNG, cardColor: AppColors.oilCarddColor),
-  GategoryModel(name: "Beverages", image: AppImages.drinksPNG, cardColor: AppColors.bevrageCarddColor),
+  GategoryModel(name: "Fresh Freuits and Vegtables", image: AppImages.vegtablesPNG, cardColor: AppColors.vegtablesCardColor.withValues(alpha: 0.3)),
+  GategoryModel(name: "Diaries and Eggs", image: AppImages.diariesPNG, cardColor: AppColors.diaryCardColor.withValues(alpha: 0.3)),
+  GategoryModel(name: "Bakeries and Snacks", image: AppImages.bakeryPNG, cardColor: AppColors.backeryCardColor.withValues(alpha: 0.3)),
+  GategoryModel(name: "Meat and Fish", image: AppImages.meatPNG, cardColor: AppColors.meatCardColor.withValues(alpha: 0.3)),
+  GategoryModel(name: "Cooking Oils and Ghee", image: AppImages.oilsPNG, cardColor: AppColors.oilCarddColor.withValues(alpha: 0.3)),
+  GategoryModel(name: "Beverages", image: AppImages.drinksPNG, cardColor: AppColors.bevrageCarddColor.withValues(alpha: 0.3)),
 
 ];

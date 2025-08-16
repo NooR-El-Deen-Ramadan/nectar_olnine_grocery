@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_theme.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/home_screen.dart';
-import 'package:nectar_olnine_grocery/features/home/pages/search_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/cart_screen.dart';
-// import 'package:nectar_olnine_grocery/features/auth/pages/splash_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/cart_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/cart_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/favourite_screen.dart';
-//import 'package:nectar_olnine_grocery/features/auth/pages/splash_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/favourite_screen.dart';
-// import 'package:nectar_olnine_grocery/features/home/pages/profile_screen.dart';
+import 'package:nectar_olnine_grocery/features/auth/pages/splash_screen.dart';
 
 
 void main() {
@@ -25,7 +16,7 @@ class MainApp extends StatelessWidget {
       theme: AppTheme.LightTheme
       ,
       debugShowCheckedModeBanner: false,
-      home: const SearchScreen  (),
+      home: const SplashScreen(),
     );
   }
 }

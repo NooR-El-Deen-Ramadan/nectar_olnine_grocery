@@ -6,7 +6,7 @@ import 'package:nectar_olnine_grocery/core/widgets/buttons/main_button.dart';
 import 'package:nectar_olnine_grocery/core/widgets/inputs/custom_text_field.dart';
 import 'package:nectar_olnine_grocery/features/auth/pages/sign_up_screen.dart';
 import 'package:nectar_olnine_grocery/features/auth/widgets/auth_header.dart';
-import 'package:nectar_olnine_grocery/features/home/pages/home_screen.dart';
+import 'package:nectar_olnine_grocery/features/main/main_screen.dart';
 import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-var formKey=GlobalKey<FormState>();
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +31,7 @@ var formKey=GlobalKey<FormState>();
                 key: formKey,
                 child: Column(
                   children: [
-                    SvgPicture.asset(
-                      AppImages.appLogoSvg
-                      
-                    
-                    ),
+                    SvgPicture.asset(AppImages.appLogoSvg),
                     SizedBox(height: 50),
                     AuthHeader(
                       tiltle: "Login",
@@ -44,7 +40,7 @@ var formKey=GlobalKey<FormState>();
                     SizedBox(height: 60),
                     CustomTextField(
                       validator: (value) {
-                        if ( value?.isEmpty??true) {
+                        if (value?.isEmpty ?? true) {
                           return "Invalid Input please enter a valid value";
                         } else {
                           return null;
@@ -58,12 +54,12 @@ var formKey=GlobalKey<FormState>();
                     ),
                     SizedBox(height: 20),
                     CustomTextField(
-                      validator: (value){
-                        if(value?.isEmpty??true)
-                       { return "please , Enter a Valid Password";}
-                       else{
-                        return null;
-                       }
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return "please , Enter a Valid Password";
+                        } else {
+                          return null;
+                        }
                       },
                       labelText: "Password",
                       prefixIcon: Icon(
@@ -86,14 +82,15 @@ var formKey=GlobalKey<FormState>();
                       ),
                     ),
                     SizedBox(height: 20),
-                    MainButton(buttonText: "Login", onPressed: () {
-                if(formKey.currentState?.validate()??false){
-                  pushToWithReplacement(context, HomeScreen());
+                    MainButton(
+                      buttonText: "Login",
+                      onPressed: () {
+                        if (formKey.currentState?.validate() ?? false) {
+                          pushToWithReplacement(context, MainScreen());
+                        }
+                      },
+                    ),
 
-                }
-                
-                    }),
-                
                     SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

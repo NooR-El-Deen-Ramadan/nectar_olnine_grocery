@@ -49,10 +49,16 @@ class SearchScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                        children: [
                           Image.asset(category.image),
-                          SizedBox(height:20),
-                          Text(category.name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),)
+                          SizedBox(height: 20),
+                          Text(
+                            category.name,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ],
                       ),
                     ),

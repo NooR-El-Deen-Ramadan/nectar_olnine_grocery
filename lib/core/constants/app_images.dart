@@ -3,6 +3,11 @@
   static const String appTitleSvg = "assets/images/app_title.svg";
   static const String appLogoSvg = "assets/images/app_logo.svg";
   static const String locationIconSvg = "assets/images/location_icon.svg";
+
+  static const String cartNavIconSVG="assets/images/cart_nav_icon.svg";
+  static const String homeNavIconSVG="assets/images/home_nav_icon.svg";
+  static const String searchNavIconSVG="assets/images/search_nav_icon.svg";
+  static const String userNavIconSVG="assets/images/user_nav_icon.svg";
   //PNGs
   static const String eggPNG="assets/images/eggs.png";
   static const String applePNG="assets/images/apple.png";
@@ -18,4 +23,9 @@
   static const String drinksPNG="assets/images/drinks.png";
   static const String bakeryPNG="assets/images/bakery.png";
   static const String diariesPNG="assets/images/diaries.png";
+  
+
+
+
+
 }
