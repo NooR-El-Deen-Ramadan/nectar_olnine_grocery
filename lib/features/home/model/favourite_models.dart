@@ -15,7 +15,6 @@ class FavouriteModel {
 }
 
 final List<FavouriteModel> favourites = [
-  FavouriteModel(name: "Bell Red Pepper", image: AppImages.redPeperPNG, price: "10", quantity: "350ml"),
   FavouriteModel(name: "Sprite Can", image: AppImages.spritePNG, price: "10", quantity: "350ml"),
   FavouriteModel(name: "Diet Coke", image: AppImages.cokePNG, price: "10", quantity: "400ml"),
   FavouriteModel(name: "Pepsi Can", image: AppImages.pepsiPNG, price: "10", quantity: "100ml"),

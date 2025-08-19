@@ -2,6 +2,8 @@
   //SVGs
   static const String appTitleSvg = "assets/images/app_title.svg";
   static const String appLogoSvg = "assets/images/app_logo.svg";
+  static const String whiteAppLogoSvg = "assets/images/white_carrot.svg";
+
   static const String locationIconSvg = "assets/images/location_icon.svg";
 
   static const String cartNavIconSVG="assets/images/cart_nav_icon.svg";
@@ -23,6 +25,8 @@
   static const String drinksPNG="assets/images/drinks.png";
   static const String bakeryPNG="assets/images/bakery.png";
   static const String diariesPNG="assets/images/diaries.png";
+  static const String welcomeScreenPNG="assets/images/welcome_screen.png";
+
   
 
 

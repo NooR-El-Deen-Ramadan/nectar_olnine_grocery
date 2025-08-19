@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomTextField(
                       validator: (value) {
                         if (value?.isEmpty ?? true) {
-                          return "Invalid Input please enter a valid value";
+                          return "Invalid Input please enter a valid Email";
                         } else {
                           return null;
                         }

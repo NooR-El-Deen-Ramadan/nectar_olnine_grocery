@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_olnine_grocery/core/constants/app_images.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
-import 'package:nectar_olnine_grocery/features/auth/pages/login_screen.dart';
+import 'package:nectar_olnine_grocery/features/welcome/welcome_screen.dart';
 import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      pushToWithReplacement(context, const LoginScreen());
+      pushToWithReplacement(context, const WelcomeScreen());
     });
   }
 

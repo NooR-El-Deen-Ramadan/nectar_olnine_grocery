@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_olnine_grocery/core/constants/app_images.dart';
@@ -18,7 +19,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool obsecureText = true;
-var formKey=GlobalKey<FormState>();
+  var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ var formKey=GlobalKey<FormState>();
             child: SingleChildScrollView(
               child: Form(
                 key: formKey,
-                child: Column(  
+                child: Column(
                   children: [
                     SvgPicture.asset(
                       AppImages.appLogoSvg,
@@ -49,11 +50,12 @@ var formKey=GlobalKey<FormState>();
                     SizedBox(height: 40),
                     CustomTextField(
                       validator: (value) {
-                        if ( value?.isEmpty??true) {
+                        if (value?.isEmpty ?? true) {
                           return "Invalid Input please, enter a valid username";
                         } else {
                           return null;
-                        }},
+                        }
+                      },
                       labelText: "Username",
                       prefixIcon: Icon(
                         Icons.person_outline,
@@ -62,13 +64,12 @@ var formKey=GlobalKey<FormState>();
                     ),
                     SizedBox(height: 20),
                     CustomTextField(
-                       validator: (value) {
-                        if ( value?.isEmpty??true) {
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
                           return "Invalid Input please, enter a valid Email";
                         } else {
                           return null;
                         }
-
                       },
                       labelText: "Email",
                       prefixIcon: Icon(
@@ -78,16 +79,15 @@ var formKey=GlobalKey<FormState>();
                     ),
                     SizedBox(height: 20),
                     CustomTextField(
-                      validator: (value){
-                        if(value?.isEmpty??true)
-                       { return "please,Enter a Valid Password";}
-                       else if(value!.length<8){
-return "Password must be at least 8 characters";
-
-                       }
-                       else{
-                        return null;
-                       }},
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return "please,Enter a Valid Password";
+                        } else if (value!.length < 8) {
+                          return "Password must be at least 8 characters";
+                        } else {
+                          return null;
+                        }
+                      },
                       obsecureText: obsecureText,
                       labelText: "Password",
                       prefixIcon: Icon(
@@ -101,23 +101,26 @@ return "Password must be at least 8 characters";
                           });
                         },
                         icon: obsecureText
-                            ? Icon(Icons.visibility,color: AppColors.greyColor,)
-                            : Icon(Icons.visibility_off, color: AppColors.greyColor),
+                            ? Icon(Icons.visibility, color: AppColors.greyColor)
+                            : Icon(
+                                Icons.visibility_off,
+                                color: AppColors.greyColor,
+                              ),
                       ),
                     ),
-                
+
                     SizedBox(height: 20),
                     termsAndConditions(),
+                    SizedBox(height: 20,),
                     MainButton(
                       buttonText: "Sign Up",
                       onPressed: () {
-                  if(formKey.currentState?.validate()??false){
-                        pushToWithoutReplacement(context, LocationScreen());
-                  }
+                        if (formKey.currentState?.validate() ?? false) {
+                          pushToWithoutReplacement(context, LocationScreen());
+                        }
                       },
-                    
                     ),
-                
+
                     SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
@@ -173,19 +176,20 @@ return "Password must be at least 8 characters";
           ),
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
-            child: TextButton(
-              style: TextButton.styleFrom(padding: EdgeInsets.all(5)),
-              onPressed: () {},
-              child: Text(
-                "Terms of Service",
-                style: TextStyle(
-                  color: AppColors.primaryColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+            child: 
+               GestureDetector(
+                onTap: (){},
+                 child: Text(
+                  "Terms of Service",
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                               ),
+               ),
             ),
-          ),
+          
           TextSpan(
             text: "and ",
             style: TextStyle(
@@ -198,19 +202,19 @@ return "Password must be at least 8 characters";
 
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
-            child: TextButton(
-              style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
-              onPressed: () {},
-              child: Text(
-                "Privacy Policy",
-                style: TextStyle(
-                  color: AppColors.primaryColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+            child: 
+               GestureDetector(
+                onTap: (){},
+                 child: Text(
+                  "Privacy Policy",
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                               ),
+               ),
             ),
-          ),
         ],
       ),
     );

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_olnine_grocery/core/constants/app_images.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
-import 'package:nectar_olnine_grocery/features/home/model/order_models.dart';
+import 'package:nectar_olnine_grocery/features/home/model/poducts_model.dart';
 import 'package:nectar_olnine_grocery/features/home/widgets/horizontal_list_view.dart';
 import 'package:nectar_olnine_grocery/features/home/widgets/item_cards.dart';
-import 'package:nectar_olnine_grocery/features/main/main_screen.dart';
+import 'package:nectar_olnine_grocery/features/product_details/product_screen.dart';
+import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,17 +16,22 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: SvgPicture.asset(AppImages.appLogoSvg)),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: SingleChildScrollView(
           child: Column(
-            
             children: [
               TextFormField(
-decoration: InputDecoration(
-  prefixIcon: Icon(Icons.search),
-  hint: Text("Search Store",style: TextStyle(color: AppColors.greyColor,fontSize: 14,fontWeight: FontWeight.w600),)
-),
-
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search),
+                  hint: Text(
+                    "Search Store",
+                    style: TextStyle(
+                      color: AppColors.greyColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
               HorizontalListView(
                 listTitle: "Exclusive Offers",
@@ -36,7 +42,7 @@ decoration: InputDecoration(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "All Orders",
+                    "Best Selling",
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                   ),
                   TextButton(
@@ -58,22 +64,27 @@ decoration: InputDecoration(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
-                  mainAxisSpacing:10,
-                  mainAxisExtent: 250 
+                  mainAxisSpacing: 10,
+                  mainAxisExtent: 250,
                 ),
                 itemCount: products.length,
                 itemBuilder: (context, index) {
-                  var product=products[index];
-                  return
-                  ItemCards(product: product);
+                  var product = products[index];
+                  return GestureDetector(
+                    onTap: () {
+                      pushToWithoutReplacement(
+                        context,
+                        ProductScreen(productModel: product),
+                      );
+                    },
+                    child: ItemCards(product: product),
+                  );
                 },
               ),
             ],
           ),
         ),
       ),
-            
-
     );
   }
 }

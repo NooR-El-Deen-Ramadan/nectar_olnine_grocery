@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
-import 'package:nectar_olnine_grocery/features/home/widgets/exclusive_offers_list.dart';
+import 'package:nectar_olnine_grocery/features/home/model/poducts_model.dart';
+import 'package:nectar_olnine_grocery/features/home/widgets/item_cards.dart';
 
 class HorizontalListView extends StatelessWidget {
   const HorizontalListView({
@@ -38,7 +39,17 @@ final String listSubTitle;
         SizedBox(
           height: 250,
     
-          child: ExclusiveOffersList(),
+          child: ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: products.length,
+      itemBuilder: (context, index) {
+        var product=products[index];
+        return ItemCards(product: product,);
+      },
+      separatorBuilder: (context, index) {
+        return SizedBox(width: 10);
+      },
+    ),
         ),
       ],
     );

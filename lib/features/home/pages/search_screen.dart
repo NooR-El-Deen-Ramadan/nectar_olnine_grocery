@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
 import 'package:nectar_olnine_grocery/core/widgets/inputs/custom_text_field.dart';
 import 'package:nectar_olnine_grocery/features/home/model/category_model.dart';
 
@@ -38,8 +37,12 @@ class SearchScreen extends StatelessWidget {
                   var category = categories[index];
                   return Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.greyColor),
+                      border: Border.all(
+                        color: category.cardStrokeColor,
+                        width: 2,
+                      ),
                       borderRadius: BorderRadius.circular(20),
+
                       color: category.cardColor,
                     ),
                     width: 170,
@@ -53,6 +56,7 @@ class SearchScreen extends StatelessWidget {
                           Image.asset(category.image),
                           SizedBox(height: 20),
                           Text(
+                            textAlign: TextAlign.center,
                             category.name,
                             style: TextStyle(
                               fontSize: 18,
