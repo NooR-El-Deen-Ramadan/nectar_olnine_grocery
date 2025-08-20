@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
 
 
 class CustomTextField extends StatelessWidget {
@@ -31,11 +32,21 @@ final Iterable<String>? autofillHints;
       onChanged: onChanged,
       validator: validator,
       decoration: InputDecoration(
-    
+        
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(20)
+        ),
+    filled: true,
+    fillColor: AppColors.lightGreyColor,
         label: Text(labelText??""),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        hintText: hintText
+        hintText: hintText,
+      
+        hintStyle: TextStyle(
+          
+          color: AppColors.greyColor,fontSize: 20)
       ),
       
     );

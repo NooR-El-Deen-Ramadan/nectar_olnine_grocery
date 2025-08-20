@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_olnine_grocery/core/constants/app_images.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
+import 'package:nectar_olnine_grocery/features/home/pages/cart_screen.dart';
 import 'package:nectar_olnine_grocery/features/home/pages/favourite_screen.dart';
 import 'package:nectar_olnine_grocery/features/home/pages/home_screen.dart';
+import 'package:nectar_olnine_grocery/features/home/pages/profile_screen.dart';
 import 'package:nectar_olnine_grocery/features/home/pages/search_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,8 +21,9 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
+    CartScreen(),
     FavoriteScreen(),
-    SearchScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -37,8 +40,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ],
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
           color: Colors.white,
         ),
@@ -63,6 +66,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               icon: SvgPicture.asset(AppImages.homeNavIconSVG),
               label: "Home",
+              
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
@@ -82,9 +86,19 @@ class _MainScreenState extends State<MainScreen> {
               label: "Search",
             ),
 
+
+            BottomNavigationBarItem(
+              icon:  SvgPicture.asset(AppImages.cartNavIconSVG, color: AppColors.darkColor),
+              label: "Cart",
+              activeIcon: 
+                SvgPicture.asset(AppImages.cartNavIconSVG,
+              ),
+            ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border, color: AppColors.darkColor),
               label: "Favourite",
+              
               activeIcon: Icon(
                 Icons.favorite_border,
                 color: AppColors.primaryColor,
