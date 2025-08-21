@@ -46,6 +46,9 @@ class _MainScreenState extends State<MainScreen> {
           color: Colors.white,
         ),
         child: BottomNavigationBar(
+          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+          selectedItemColor: AppColors.primaryColor,
           elevation: 0,
           backgroundColor: Colors.white,
           currentIndex: currentIndex,
@@ -88,8 +91,13 @@ class _MainScreenState extends State<MainScreen> {
 
 
             BottomNavigationBarItem(
-              icon:  SvgPicture.asset(AppImages.cartNavIconSVG, color: AppColors.darkColor),
+              
+              icon:  SvgPicture.asset(AppImages.cartNavIconSVG, colorFilter: ColorFilter.mode(
+                AppColors.darkColor,
+                BlendMode.srcIn,
+              )),
               label: "Cart",
+              
               activeIcon: 
                 SvgPicture.asset(AppImages.cartNavIconSVG,
               ),

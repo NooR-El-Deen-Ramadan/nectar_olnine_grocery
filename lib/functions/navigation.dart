@@ -18,5 +18,16 @@ pushToWithoutReplacement(BuildContext context, Widget screen) {
   );
 }
 
+pushAndRemoveUntil(
+    BuildContext context,
+    Widget screen,
+  ) {
+  
+  Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) => screen),
+    (route) => false,
+  );
+}
 
 

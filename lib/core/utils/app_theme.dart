@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_olnine_grocery/core/constants/app_fonts.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
 
 class AppTheme {
 
-static ThemeData LightTheme = ThemeData(
+static ThemeData lightTheme = ThemeData(
+  fontFamily: AppFonts.poppinFontFamily,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     surfaceTintColor: Colors.transparent,

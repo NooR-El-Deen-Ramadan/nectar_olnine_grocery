@@ -77,8 +77,8 @@ class _CartTileState extends State<CartTile> {
         Spacer(),
         Column(
           children: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.delete)),
-            Gap(25),
+            IconButton(onPressed: (){}, icon: Icon(Icons.delete,color: AppColors.primaryColor,)),
+            Gap(20),
             Text(
               "\$ ${widget.product.price}",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),

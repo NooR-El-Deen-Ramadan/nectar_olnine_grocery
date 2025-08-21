@@ -43,11 +43,11 @@ List<ProductModels> products = [
         'Banana are nutritious. Banana may be good for weight loss. banana may be good for your heart.',
   ),
   ProductModels(
-    name: "Egg Chicken Red",
-    image: AppImages.eggPNG,
+    name: "ginger",
+    image: AppImages.gingerPNG,
     price: "20",
     quantity: 0,
     description:
-        'eggs are nutritious. eggs may be good for weight loss. eggs may be good for your heart.',
-  ),
+        'Ginger is a flowering plant. It may be good for your health.',
+  ),  
 ];

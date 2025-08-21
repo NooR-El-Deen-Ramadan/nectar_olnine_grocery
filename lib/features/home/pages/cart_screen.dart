@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:nectar_olnine_grocery/core/constants/app_images.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
 import 'package:nectar_olnine_grocery/core/widgets/buttons/main_button.dart';
 import 'package:nectar_olnine_grocery/features/home/model/poducts_model.dart';
+import 'package:nectar_olnine_grocery/features/home/pages/placed_order_screen.dart';
 import 'package:nectar_olnine_grocery/features/home/widgets/buttom_sheet_tile.dart';
 import 'package:nectar_olnine_grocery/features/home/widgets/cart_tile.dart';
+import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -75,7 +76,8 @@ class CartScreen extends StatelessWidget {
                               Divider(),
                               ButtomSheetTile(
                                 leadingText: "Delivery",
-                                trailingWidget: Text("Select Method",
+                                trailingWidget: Text(
+                                  "Select Method",
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
@@ -94,7 +96,8 @@ class CartScreen extends StatelessWidget {
                               Divider(),
                               ButtomSheetTile(
                                 leadingText: "Promo Code",
-                                trailingWidget: Text("Apply",
+                                trailingWidget: Text(
+                                  "Apply",
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
@@ -104,7 +107,8 @@ class CartScreen extends StatelessWidget {
                               Divider(),
                               ButtomSheetTile(
                                 leadingText: "Total",
-                                trailingWidget: Text("250\$",
+                                trailingWidget: Text(
+                                  "250\$",
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
@@ -116,11 +120,22 @@ class CartScreen extends StatelessWidget {
                                 child: Text(
                                   "By placing an order you agree to our Terms And Conditions",
 
-                                  style: TextStyle(color: AppColors.greyColor, fontSize: 14,fontWeight: FontWeight.w400),
+                                  style: TextStyle(
+                                    color: AppColors.greyColor,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
                               ),
-                              MainButton(buttonText:"Place Order", onPressed: (){})
-                              
+                              MainButton(
+                                buttonText: "Place Order",
+                                onPressed: () {
+                                  pushToWithoutReplacement(
+                                    context,
+                                    PlacedOrderScreen(),
+                                  );
+                                },
+                              ),
                             ],
                           ),
                         ),

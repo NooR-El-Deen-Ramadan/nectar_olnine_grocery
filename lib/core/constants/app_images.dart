@@ -10,7 +10,7 @@ class AppImages {
   static const String searchNavIconSVG = "assets/images/search_nav_icon.svg";
   static const String userNavIconSVG = "assets/images/user_nav_icon.svg";
   //products PNGs
-  static const String eggPNG = "assets/images/eggs.png";
+  static const String gingerPNG = "assets/images/ginger.png";
   static const String applePNG = "assets/images/apple.png";
   static const String bananaPNG = "assets/images/banana.png";
   static const String redPeperPNG = "assets/images/red_peper.png";
@@ -29,6 +29,6 @@ class AppImages {
   static const String welcomeScreenPNG = "assets/images/welcome_screen.png";
   static const String phoneScreenPNG = "assets/images/phone_screen_image.png";
   static const String profilePNG = "assets/images/profile_pic.png";
-  static const String visaCartSVG = "assets/images/card.svg";
   static const String visaCartPNG = "assets/images/card.png";
+  static const String successPNG = "assets/images/success.png";
 }

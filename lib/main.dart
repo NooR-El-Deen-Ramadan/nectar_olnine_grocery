@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppTheme.LightTheme,
+      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
 
       home: const MainScreen(),

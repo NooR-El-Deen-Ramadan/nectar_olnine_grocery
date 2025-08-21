@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_olnine_grocery/core/utils/app_colors.dart';
 import 'package:nectar_olnine_grocery/features/home/model/profile_list.dart';
 
+// ignore: must_be_immutable
 class ProfileListTile extends StatelessWidget {
   ProfileListTile({super.key, required this.tile});
 

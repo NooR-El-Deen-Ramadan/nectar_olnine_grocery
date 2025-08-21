@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_olnine_grocery/core/widgets/inputs/custom_text_field.dart';
+import 'package:nectar_olnine_grocery/features/catergories/category_screen.dart';
 import 'package:nectar_olnine_grocery/features/home/model/category_model.dart';
+import 'package:nectar_olnine_grocery/features/home/widgets/main_search_bar.dart';
+import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -18,12 +20,7 @@ class SearchScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Column(
           children: [
-            CustomTextField(
-              
-              prefixIcon: Icon(Icons.search),
-              hintText: "Search Store",
-              
-            ),
+            MainSearchBar(),
             SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
@@ -37,35 +34,40 @@ class SearchScreen extends StatelessWidget {
                 itemCount: categories.length,
                 itemBuilder: (context, index) {
                   var category = categories[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: category.cardStrokeColor,
-                        width: 2,
+                  return GestureDetector(
+                    onTap: () {
+                      pushToWithoutReplacement(context, CategoryScreen(title: category.name));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: category.cardStrokeColor,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                    
+                        color: category.cardColor,
                       ),
-                      borderRadius: BorderRadius.circular(20),
-
-                      color: category.cardColor,
-                    ),
-                    width: 170,
-                    height: 180,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(category.image),
-                          SizedBox(height: 20),
-                          Text(
-                            textAlign: TextAlign.center,
-                            category.name,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
+                      width: 170,
+                      height: 180,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(category.image),
+                            SizedBox(height: 20),
+                            Text(
+                              textAlign: TextAlign.center,
+                              category.name,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   );
