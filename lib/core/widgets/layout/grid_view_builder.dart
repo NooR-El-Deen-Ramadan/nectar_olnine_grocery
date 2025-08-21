@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_olnine_grocery/features/home/model/favourite_models.dart';
 import 'package:nectar_olnine_grocery/features/home/model/poducts_model.dart';
 import 'package:nectar_olnine_grocery/features/home/widgets/item_cards.dart';
-
+import 'package:nectar_olnine_grocery/features/product_details/product_screen.dart';
+import 'package:nectar_olnine_grocery/functions/navigation.dart';
 
 class GridViewBuilder extends StatelessWidget {
   const GridViewBuilder({
@@ -20,10 +20,18 @@ class GridViewBuilder extends StatelessWidget {
         mainAxisSpacing: 10,
         mainAxisExtent: 250,
       ),
-      itemCount: favourites.length,
+      itemCount: products.length,
       itemBuilder: (context, index) {
         var product = products[index];
-        return ItemCards(product: product);
+        return GestureDetector(
+          onTap: () {
+            pushToWithoutReplacement(
+              context,
+              ProductScreen(productModel: product),
+            );
+          },
+          child: ItemCards(product: product),
+        );
       },
     );
   }
