@@ -25,8 +25,6 @@
 
 ### 🔹 Navigation Flow (Main Screens)
 
-### 🔹 Navigation Flow (Main Screens)
-
 #### Main Screen
 <p align="center">
   <img src="git_readme_assets/main_screen.png" width="250" alt="Main Screen"/>
