@@ -50,11 +50,14 @@ class LocationScreen extends StatelessWidget {
               CustomTextField(labelText: "Address"),
               SizedBox(height: 70),
 
-              MainButton(
-                buttonText: "Submit",
-                onPressed: () {
-                  pushToWithReplacement(context, LoginScreen());
-                },
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: MainButton(
+                  buttonText: "Submit",
+                  onPressed: () {
+                    pushToWithReplacement(context, LoginScreen());
+                  },
+                ),
               ),
             ],
           ),
